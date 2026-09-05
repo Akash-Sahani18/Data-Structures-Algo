@@ -3,20 +3,21 @@ class matrixChainMultiplication {
 
     public static int chainMultiplication(int nums[], int i, int j) {
 
-        if (i + j == 0) {
+        if (j - 1 == i) {
             return 0;
         }
-        int curr = Integer.MAX_VALUE;
-        for (int k = i; k < j; k++) {
-            curr = chainMul(nums, i, k) + chainMul(nums, k + 1, j);
+        int res = Integer.MAX_VALUE;
+        for (int k = i + 1; k < j; k++) {
+            int curr = chainMul(nums, i, k) + chainMul(nums, k, j) + nums[i] * nums[k] * nums[j];
+            res = Math.min(res, curr);
         }
-        return curr;
+        return res;
     }
 
     public static void main(String args[]) {
         int nums[] = {2, 1, 3, 4};
         int i = 0;
-        int j = nums.length;
+        int j = nums.length - 1;
         System.out.println(chainMul(nums, i, j) + " ");
     }
 }
