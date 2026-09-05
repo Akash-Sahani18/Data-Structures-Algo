@@ -8,7 +8,7 @@ class matrixChainMultiplication {
         }
         int res = Integer.MAX_VALUE;
         for (int k = i + 1; k < j; k++) {
-            int curr = chainMul(nums, i, k) + chainMul(nums, k, j) + nums[i] * nums[k] * nums[j];
+            int curr = chainMultiplication(nums, i, k) + chainMultiplication(nums, k, j) + nums[i] * nums[k] * nums[j];
             res = Math.min(res, curr);
         }
         return res;
@@ -18,6 +18,6 @@ class matrixChainMultiplication {
         int nums[] = {2, 1, 3, 4};
         int i = 0;
         int j = nums.length - 1;
-        System.out.println(chainMul(nums, i, j) + " ");
+        System.out.println(chainMultiplication(nums, i, j) + " ");
     }
 }
