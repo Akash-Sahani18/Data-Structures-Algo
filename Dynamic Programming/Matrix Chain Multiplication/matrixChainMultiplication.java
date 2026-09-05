@@ -1,7 +1,7 @@
 
 class matrixChainMultiplication {
 
-    public static int chainMul(int nums[], int i, int j) {
+    public static int chainMultiplication(int nums[], int i, int j) {
 
         if (i + j == 0) {
             return 0;
